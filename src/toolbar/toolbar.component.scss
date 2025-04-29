@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+
+mat-form-field {
+    @include mat.form-field-overrides((
+        container-height: 1em,
+        container-vertical-padding: .5em,
+    ));
+}
+
+.mat-toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+
+    div {
+        display: flex;
+        gap: 5px
+    }
+
+    .end-buttons {
+        margin-left: auto;
+    }
+}
+
+.mat-divider {
+    &-vertical {
+        height: 70%;
+        border-color: white;
+    }
+}

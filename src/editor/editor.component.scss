@@ -1,0 +1,72 @@
+::ng-deep app-markdown-editor {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+
+  .md-editor-container {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+
+    &.border {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &.md-editor-resizable {
+      resize: both;
+      overflow: auto;
+      display: inline-block;
+      width: 100%;
+
+      .md-footer {
+        z-index: -1;
+      }
+    }
+
+    .md-layout {
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+
+      .editor-container {
+        display: flex;
+        flex: auto;
+
+        &>div {
+          flex: 1;
+        }
+
+        .editor-panel-container {
+          height: 100%;
+        }
+
+        .editor-panel {
+          height: 100%;
+
+          .ace-editor {
+            height: 100%;
+          }
+        }
+      }
+
+      .preview-panel {
+        height: 100%;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: shared.$secondary-color;
+        overflow-y: auto;
+        padding: 0 8px;
+
+        >*:first-child {
+          padding-top: 0 !important;
+          margin-top: 0 !important;
+        }
+
+        .material-icons {
+          vertical-align: top;
+          margin-bottom: 0.2em;
+          margin-left: -0.8em;
+        }
+      }
+    }
+  }
+}

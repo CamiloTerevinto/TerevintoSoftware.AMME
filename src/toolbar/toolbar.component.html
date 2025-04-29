@@ -1,0 +1,63 @@
+<mat-toolbar>
+  <div>
+    <button mat-icon-button type="button" matTooltip="Bold" (click)="insertContent('Bold')">
+      <mat-icon aria-label="bold">format_bold</mat-icon>
+    </button>
+    <button mat-icon-button type="button" matTooltip="Italic" (click)="insertContent('Italic')">
+      <mat-icon aria-label="italic">format_italic</mat-icon>
+    </button>
+    <button mat-icon-button type="button" matTooltip="Heading" (click)="insertContent('Heading')">
+      <mat-icon aria-label="italic">format_size</mat-icon>
+    </button>
+    <button mat-icon-button type="button" matTooltip="Refrence" (click)="insertContent('Reference')">
+      <mat-icon aria-label="quote">format_quote</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <div>
+    <button mat-icon-button type="button" matTooltip="Link" (click)="insertContent('Link')">
+      <mat-icon aria-label="link">link</mat-icon>
+    </button>
+    <button mat-icon-button type="button" matTooltip="Image" (click)="insertContent('Image')">
+      <mat-icon aria-label="Image">photo</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <div>
+    <button mat-icon-button type="button" matTooltip="Unordered List" (click)="insertContent('Ul')">
+      <mat-icon aria-label="Unordered List">
+        format_list_bulleted
+      </mat-icon>
+    </button>
+    <button mat-icon-button type="button" matTooltip="Ordered List" (click)="insertContent('Ol')">
+      <mat-icon aria-label="Unordered List">
+        format_list_numbered
+      </mat-icon>
+    </button>
+    <button mat-icon-button type="button" matTooltip="Code Block" (click)="insertContent('Code')">
+      <mat-icon aria-label="code">code</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <div>
+    <mat-form-field appearance="outline" subscriptSizing="dynamic" floatLabel="always">
+      <mat-label>Page name</mat-label>
+      <input type="text" matInput [(ngModel)]="pageName" />
+    </mat-form-field>
+  </div>
+
+  <div class="end-buttons">
+    <button mat-flat-button (click)="onExit.emit()" type="button" [disabled]="documentState() === 'pendingChanges'">
+      Exit
+    </button>
+    <button mat-flat-button (click)="onSave.emit()" type="button" [disabled]="documentState() === 'clean'">
+      Save
+    </button>
+  </div>
+</mat-toolbar>
