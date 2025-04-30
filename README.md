@@ -1,5 +1,7 @@
 This repository contains an Angular Material-based Markdown editor. 
 
+See it live: https://stackblitz.com/edit/terevintosoftware-amme
+
 ## Important notes:
 
 * This is based on Michael Doye's codebase, last released in 2019: https://github.com/michaeldoye/mat-markdown-editor.
